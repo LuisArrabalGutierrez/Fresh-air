@@ -1,7 +1,5 @@
 # LAMP stack built with Docker Compose
-
-![Landing Page](https://user-images.githubusercontent.com/43859895/141092846-905eae39-0169-4fd7-911f-9ff32c48b7e8.png)
-
+# If itś everything installed, just run "sudo systemctl stop apache2" and "docker compose up" , the web will be running in localhost
 A basic LAMP stack environment built using Docker Compose. It consists of the following:
 
 - PHP
