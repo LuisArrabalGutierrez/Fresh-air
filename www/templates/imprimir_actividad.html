@@ -1,0 +1,43 @@
+{% extends "portada.html" %}
+
+    {% block css %}
+        <link rel="stylesheet" href="../css/imprimir.css">
+    {% endblock %}
+
+    {% block header %}
+
+    {% endblock %}
+
+    {% block central%}
+           
+        
+        <div class="Titulo">
+            <p>Disfruta de la naturaleza</p>
+            <p><strong>{{ actividad.nombre }}</strong></p>
+        </div>
+
+        <div class="linea"></div>
+
+        <div class="actividad">
+
+        
+            <p>{{ actividad.primer_titulo }}</p>
+            <p>{{ actividad.segundo_titulo }}</p>
+                <ul class="lista-actividad">
+                    <li>{{ actividad.primer_li }}</li>
+                    <li>{{ actividad.segundo_li }}</li>
+                    <li>{{ actividad.tercer_li }}</li>
+                    <li>{{ actividad.cuarto_li }}</li>
+                </ul>
+            <p>{{ actividad.enganchadilla }}</p>
+            <p><strong>Precio:</strong> {{ actividad.precio }} por persona</p>
+            <p><strong>Fecha próxima:</strong> {{ actividad.fecha }}</p>
+            <p><strong>Material necesario:</strong> {{ actividad.material }}</p>
+    
+    {% endblock %}
+
+    {% block asidefooter %}
+
+    {% endblock %}
+
+   

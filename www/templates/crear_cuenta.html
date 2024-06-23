@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Air</title>
+    
+    <link rel="stylesheet" href="../css/inicio.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+   
+    <main>
+        <div class="logo">
+            <img src="../Imgs/montaña.png" alt="Logo de la pagina">
+            <h1>Fresh Air</h1>
+            
+        </div>
+
+        <div class="div-form">
+            <form action="../crear_cuenta.php" method="POST">
+
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="custom-input" name="nombre" required><br>
+                
+                <label for="correo">Correo electrónico:</label><br>
+                <input type="email" id="custom-input" name="correo" required><br>
+                
+                <label for="contrasena">Contraseña:</label><br>
+                <input type="password" id="custom-input" name="contraseña" required><br>
+                
+                <input type="submit" value="Crear cuenta">
+
+            </form>    
+            
+            <!-- Preguntar si  tiene cuenta para iniciarla-->
+
+            <p>¿Ya tienes cuenta? <a href="../iniciar_sesion.php" >Iniciar Sesión</a></p>
+            
+
+        </div>
+
+
+    </main>
+
+</body>
+   
+</html>
+
+

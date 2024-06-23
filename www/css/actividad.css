@@ -1,0 +1,424 @@
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color:rgb(230, 230, 230);
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo img{
+    border-radius: 100%;
+    width: 40%;
+}
+
+
+
+.navigation ul{
+    list-style: none;
+    
+}
+
+
+
+.header .navigation ul li{
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all .2s;
+}
+
+.header .navigation ul li a:hover{
+    background-color: #f1a90f;
+    color: black;
+}
+
+.header .navigation ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: #f1a90f;
+    display: none;
+}
+
+.header .navigation ul li ul li a{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+    
+}
+
+
+.header .navigation ul li ul li{
+    width: 100%;
+}
+
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+
+.menu{
+    width: 45px;
+    height: 35px;
+}
+
+main {
+    padding-top: 15%; 
+    margin-top: 10%; 
+    margin-right: 22%; 
+    flex:1;
+}
+
+
+/*************/
+/*Presentacion*/
+/*************/
+.galeria p{
+    text-align: center;
+    font-size: 20px;
+    margin: 2% 0 1% 0;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5%;
+}
+
+.linea{
+    border-top: 0.1em solid #f1a90f;
+}
+
+.Titulo p {
+    font-size: 200%;
+}
+
+.actividad .imagenes{
+    align-items: center;
+    display: flex;
+    
+}
+
+.actividad .imagenes img {
+    width: 45%; 
+    height: auto; 
+    margin-right: 2%; 
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 10px; 
+    max-height: 200px;
+
+
+}
+
+.lista-actividad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    font-size: 110%;
+
+}
+
+.botones{
+    display: flex;
+    margin: 5%;
+    justify-content: center;
+
+}
+
+.boton-link {
+    display: inline-block;
+    background-color:rgb(230, 230, 230);
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.boton-link:hover {
+    background-color: #f1a90f;
+}
+
+
+.mostrar-comentarios{
+    display: inline-block;
+    background-color:rgb(230, 230, 230);
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+.mostrar-comentarios:hover {
+    background-color: #f1a90f;
+}
+
+.seccion-comentarios {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.seccion-comentarios h2{
+    text-align: center;
+}
+
+.comentario {
+    margin-bottom: 10px;
+}
+
+.comentario p{
+    text-align: left;
+}
+
+.clasificacion {
+
+    direction: rtl;/*que se escribe de derecha a izq*/
+    unicode-bidi: bidi-override;/*para que se aplica lo de arriba*/
+    text-align: right;/*para alinear las estrellas horizontalmente 
+                        y centrarlas en el contenedor.*/
+}
+
+.estrella {
+    color: #e4cf0b; /* Color de las estrellas llenas */
+    font-size: 24px; /* Tamaño de las estrellas */
+    margin-right: 5px; /* Espaciado entre las estrellas */
+}
+
+.eliminar-boton {
+    border-radius: 50%; /* Borde redondeado para que parezcan círculos */
+    padding: 8px; /* Espacio interno dentro del botón */
+    background-color: #f0f0f0; /* Color de fondo */
+    border: none; /* Sin borde */
+    display: flex; /* Para que estén en línea */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-right: 10px; /* Separación entre botones */
+}
+
+.eliminar-boton img {
+    width: 20px; /* Ancho del icono */
+    height: 20px; /* Altura del icono */
+    border-radius: 100;
+}
+
+.eliminar-boton:hover {
+    background-color: #ccc; /* Color de fondo al pasar el ratón */
+}
+
+.mostrar-modificar{
+    
+    display: inline-block;
+    background-color:rgb(230, 230, 230);
+    color: black;
+    padding: 1px 2px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-color: rgb(230, 230, 230);
+        
+}
+
+.mostrar-modificar a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.mostrar-modificar:hover {
+    background-color: #ccc;
+}
+
+.div-modificar{
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/*******/
+/*Aside*/
+/*******/
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    top: 30%;
+    right: 0;
+    width: 22%; /* Ancho fijo para el aside */
+    height: 100%;
+    position: fixed;    
+}
+
+aside h2{
+    color: rgb(0, 0, 0);
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+aside a{    
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10%;
+    
+}
+
+aside a:hover{
+    color: #f1a90f;
+}
+
+aside img{
+    width: 80%;
+    height: 35%;
+    margin-bottom: 10%;
+}
+
+
+/********/
+/*Footer*/
+/********/
+
+footer {
+    flex-shrink: 0; 
+    background-color:rgb(230, 230, 230);
+    color: black;
+    padding: 2% 35% ;
+}
+
+
+@media(max-width:950px){
+    .header label{
+        display: initial;
+    }
+
+    .header{
+        padding: 10% 10%;
+        
+    }
+
+    .header .navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f1a90f;
+        display: none;
+    }
+
+    .header .navigation ul li{
+        width: 100%;
+
+    }
+
+    .header .navigation ul li a{
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li{
+        background-color: #f1a90f;
+
+    }
+
+    .header .navigation ul li ul li ul{
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    #toggle:checked ~ .navigation{
+        display: block;
+    }
+
+    main{
+        margin-top: 35%;
+        
+    }
+
+    .modificar-eliminar-boton {
+        border-radius: 50%; /* Borde redondeado para que parezcan círculos */
+        padding: 8px; /* Espacio interno dentro del botón */
+        background-color: #f0f0f0; /* Color de fondo */
+        border: none; /* Sin borde */
+        display: flex; /* Para que estén en línea */
+        align-items: center; /* Centrar verticalmente */
+        justify-content: center; /* Centrar horizontalmente */
+        margin-right: 10px; /* Separación entre botones */
+    }
+    
+    .modificar-eliminar-boton img {
+        width: 20px; /* Ancho del icono */
+        height: 20px; /* Altura del icono */
+    }
+    
+}

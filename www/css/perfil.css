@@ -1,0 +1,255 @@
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header{
+    position: fixed;/*para que se quede fijo*/
+    top:0;
+    left: 0;
+    right: 0;
+    background-color:rgb(230, 230, 230);
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.logo img{
+    border-radius: 100%;
+    width: 40%;
+}
+
+
+
+.navigation ul{
+    list-style: none;
+    
+}
+
+
+
+.header .navigation ul li{
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 1vh 1vh;
+    display: block;
+    transition: all .2s;
+}
+
+.header .navigation ul li a:hover{
+    background-color: #f1a90f;
+    color: black;
+}
+
+.header .navigation ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: #f1a90f;
+    display: none;
+}
+
+.header .navigation ul li ul li a{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+    
+}
+
+
+.header .navigation ul li ul li{
+    width: 100%;
+}
+
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+
+.perfil-icon {
+    width: 3px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Esto mantendrá la proporción original de la imagen */
+}
+
+/*************/
+/*Perfil*/
+/*************/
+
+main {
+    position: absolute;
+    margin-top: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh;
+}
+
+main h2{
+    font-size: 200%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    
+
+}
+
+.usuario {
+    margin-bottom: 10px; /* Agrega un margen inferior para separar cada usuario */
+    display: block;
+}
+
+/* Reduce el tamaño de los botones y ajusta el espacio entre ellos */
+.usuario button {
+    width: 30px; /* Ajusta el ancho según sea necesario */
+    height: 30px; /* Ajusta la altura según sea necesario */
+    margin-right: 5px; /* Agrega un margen derecho para separar los botones */
+}
+
+.usuario button img {
+    width: 100%; /* Ajusta el tamaño de la imagen para que se ajuste al botón */
+    height: auto; /* Esto mantendrá la proporción original de la imagen */
+}
+/* Estilo para las etiquetas de texto al lado de los botones */
+.usuario label {
+    margin-right: 10px; /* Agrega un margen derecho para separar las etiquetas de texto */
+    font-size: 14px; /* Ajusta el tamaño de fuente según sea necesario */
+}
+
+/********/
+/*Footer*/
+/********/
+
+footer{
+    background-color: rgb(230, 230, 230);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
+
+@media(max-width:580px){
+    .header label{
+        display: initial;
+    }
+
+    .header{
+        padding: 10% 10%;
+        
+    }
+
+    .header .navigation {
+        position: absolute;
+
+
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f1a90f;
+        display: none;
+    }
+
+    .header .navigation ul li{
+        width: 100%;
+
+    }
+
+    .header .navigation ul li a{
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li{
+        background-color: #f1a90f;
+
+    }
+
+    .header .navigation ul li ul li ul{
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    #toggle:checked ~ .navigation{
+        display: block;
+    }
+
+    main {
+        position: absolute;
+        margin-top: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+    }
+    
+    
+    
+}
+
+
+/*para cuando pasa los 800 px*/
+@media(min-width:800px){
+    
+
+    main {
+        position: absolute;
+        margin-top: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 90vh;
+    }
+    
+}

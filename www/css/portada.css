@@ -1,0 +1,364 @@
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.header{
+    position: fixed;/*para que se quede fijo*/
+    top:0;
+    left: 0;
+    right: 0;
+    background-color:rgb(230, 230, 230);
+    padding: 5% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.logo img{
+    border-radius: 100%;
+    width: 40%;
+}
+
+
+
+.navigation ul{
+    list-style: none;
+    
+}
+
+
+
+.header .navigation ul li{
+    float: left;
+    position: relative;
+}
+
+.header .navigation ul li a{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: all .2s;
+}
+
+.header .navigation ul li a:hover{
+    background-color: #f1a90f;
+    color: black;
+}
+
+.header .navigation ul li ul{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: #f1a90f;
+    display: none;
+}
+
+.header .navigation ul li ul li a{
+    font-size: 15px;
+    text-transform: capitalize;
+}
+
+.header .navigation ul li ul li ul{
+    position: absolute;
+    top: 0;
+    right: 300px;
+    
+}
+
+
+.header .navigation ul li ul li{
+    width: 100%;
+}
+
+
+.header .navigation ul li:hover > ul {
+    display: initial;
+}
+
+
+#toggle,
+.header label{
+    display: none;
+    cursor: pointer;
+}
+
+.perfil-icon {
+    width: 3px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Esto mantendrá la proporción original de la imagen */
+}
+
+.perfil{
+    width: 50%;
+    
+}
+
+#sugerencias {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#sugerencias li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#sugerencias li:hover {
+    background-color: #f0f0f0;
+}
+
+
+.menu{
+    width: 45px;
+    height: 35px;
+}
+
+main {
+    padding-top: 15%; 
+    margin-top: 10%; 
+    margin-right: 22%; 
+}
+
+
+/*************/
+/*Presentacion*/
+/*************/
+.galeria p{
+    text-align: center;
+    font-size: 20px;
+    margin: 2% 0 1% 0;
+    color: rgb(0, 0, 0);
+    margin-bottom: 5%;
+}
+
+.linea{
+    border-top: 0.1em solid #f1a90f;
+}
+
+/*************/
+/* Galeria*/
+/*************/
+
+.actividades{
+
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-around;
+    flex-wrap: wrap;/*para que se muevan a la linea de abajo si no caben*/
+    border-radius: 10px;
+}
+
+
+.actividades .actividad{
+    width: 30%;
+    margin:10px;
+    padding: 0;
+    position: relative;
+    height: 50%;
+    overflow: hidden;/*el contenido desbordante se oculta*/
+    transition: all .3s;
+    border-radius: 10px;
+}
+
+.imagen img{
+   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/*para que el contenido cubra todo el contenedor*/
+    transition: all .3s;
+
+}
+
+.overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color:gray ;
+    width: 100%;
+    height: 0;
+    transition: .3s ease;
+    overflow: hidden;
+}
+
+.overlay a{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+    text-align: center;
+}
+
+.imagen:hover .overlay{
+    height: 100%;
+    cursor: pointer;
+    opacity: 0.7;
+
+}
+
+.actividades .actividad .imagen img {
+    height: 200px; /* Establece un alto fijo para todas las imágenes */
+}
+
+
+
+/*******/
+/*Aside*/
+/*******/
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(255, 255, 255);
+    top: 30%;
+    right: 0;
+    width: 22%; /* Ancho fijo para el aside */
+    height: 100%;
+    position: fixed;    
+}
+
+aside h2{
+    color: rgb(0, 0, 0);
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+aside a{    
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10%;
+    
+}
+
+aside a:hover{
+    color: #f1a90f;
+}
+
+aside img{
+    width: 80%;
+    height: 35%;
+    margin-bottom: 10%;
+}
+
+
+/********/
+/*Footer*/
+/********/
+
+footer{
+    background-color: rgb(230, 230, 230);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
+
+@media(max-width:580px){
+    .header label{
+        display: initial;
+    }
+
+    .header{
+        padding: 10% 10%;
+        
+    }
+
+    .header .navigation {
+        position: absolute;
+
+
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f1a90f;
+        display: none;
+    }
+
+    .header .navigation ul li{
+        width: 100%;
+
+    }
+
+    .header .navigation ul li a{
+        padding: 8px 30px 8px 10%;
+
+    }
+
+    .header .navigation ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0;
+    }
+
+    .header .navigation ul li ul li{
+        background-color: #f1a90f;
+
+    }
+
+    .header .navigation ul li ul li ul{
+        position: relative;
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    #toggle:checked ~ .navigation{
+        display: block;
+    }
+
+    main{
+        margin-top: 30%;
+    }
+
+    .perfil{
+        max-width: 40px;
+        
+    }
+    
+    
+}
+
+@media screen and (min-width: 950px) {
+    .galeria p{
+        font-size: 150%;
+    }
+
+    .perfil{
+        width: 50%;
+
+    }
+    
+}

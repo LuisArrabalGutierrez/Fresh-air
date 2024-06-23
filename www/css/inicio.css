@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+
+
+.botones {
+    margin-top: 10%;
+    text-align: center; /* Para centrar los botones */
+}
+
+.botones a {
+    display: block; /* Para que los botones estén uno debajo del otro */
+    width: 30%; /* Ancho deseado para los botones */
+    padding: 10px; /* Espacio interno */
+    margin: 5% auto; /* Margen superior e inferior y centrar horizontalmente */
+}
+
+
+
+
+@media(max-width:580px) {
+    .botones{
+        margin-top: 10%; /* Reduce el margen superior en pantallas pequeñas */
+    }
+
+    .botones a {
+        width: 50%; 
+        margin: 5px auto; 
+    }
+}
+
+@media(min-width: 1400px) {
+    
+}

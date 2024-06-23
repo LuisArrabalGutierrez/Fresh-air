@@ -1,0 +1,135 @@
+{% extends "portada.html" %}
+
+    {% block css %}
+        <link rel="stylesheet" href="../css/actividad.css">
+        <script src="../comentarios.php" ></script>
+    {% endblock %}
+
+    {% block central%}
+           
+        
+    <div class="Titulo">
+        <p>Disfruta de la naturaleza</p>
+        <p><strong>{{ actividad.nombre }}</strong></p>
+    </div>
+
+    <div class="linea"></div>
+
+    <div class="actividad">
+
+    <div class="imagenes">
+        <img class="img1" src="{{ imagenes.img1 }}" alt="Imagen 1">
+        <img class="img2" src="{{ imagenes.img2 }}" alt="Imagen 2">
+    </div>
+
+    <p>{{ actividad.primer_titulo }}</p>
+        <p>{{ actividad.segundo_titulo }}</p>
+            <ul class="lista-actividad">
+                <li>{{ actividad.primer_li }}</li>
+                <li>{{ actividad.segundo_li }}</li>
+                <li>{{ actividad.tercer_li }}</li>
+                <li>{{ actividad.cuarto_li }}</li>
+            </ul>
+    <p>{{ actividad.enganchadilla }}</p>
+    <p><strong>Precio:</strong> {{ actividad.precio }} por persona</p>
+    <p><strong>Fecha próxima:</strong> {{ actividad.fecha }}</p>
+    <p><strong>Material necesario:</strong> {{ actividad.material }}</p>
+
+    <div class="botones">
+        <a href="https://m.facebook.com/story.php?story_fbid=pfbid025ZAsqQP1kvHvRgn4T4G37LGh66JBSY6SMcrsAP7TvVQgEU39GP8ZBEaSKqQHyX8ul&id=299724076857823" class="boton-link">FB</a>
+        <a href="https://twitter.com/BNaturalSport" class="boton-link">Tw</a>
+        <a href="../imprimir_actividad.php?ac={{actividad.id}}" class="boton-link">Imprimir</a>
+        <a class="mostrar-comentarios">Ver Comentarios</a>
+    </div>
+
+    <div class="seccion-comentarios" id="commentSection">
+        <h2>Comentarios</h2>
+        
+        {% if moderador%}
+                <label for="busqueda">Buscar comentario:</label>
+                <input type="text" id="busqueda" placeholder="Ingrese texto para buscar">
+        {% endif %}
+
+        {% for comentario in comentarios %}
+            <!--Busqueda y filtro de los comentarios-->
+            
+            <div class="comentario">
+                <p><strong>Autor:</strong> {{ comentario.autor }}</p>
+                <p><strong>Fecha:</strong> {{ comentario.fecha }}</p>
+                <p>{{ comentario.comentario }}</p>
+
+                <div class="clasificacion">
+                    <label >★</label>
+                    <label >★</label>
+                    <label >★</label>
+                    <label >★</label>
+                    <label >★</label>
+                </div>
+
+                {% if moderador %}
+                
+                    <form action="comentarios.php" method="post">
+                        <input type="hidden" name="id_actividad" value="{{ actividad.id }}">
+                        <input type="hidden" name="id" value="{{ comentario.id }}">
+                        <button type="submit" name="accion" value="borrar" class="eliminar-boton">
+                            <img src="../Imgs/eliminar.png" alt="Borrar comentario">
+                        </button>
+                    </form>
+                    
+                    <div class="mostrar-modificar" id="mostrarModificar{{ comentario.id }}">
+                        <a class="modificar-boton">Abrir</a>
+                        <img src="../Imgs/modificar.png" alt="Modificar comentario">
+                    </div>
+                    
+                    <div class="div-modificar" id="div-modificar">
+                        <form action="comentarios.php" method="post" >
+                            <input type="hidden" name="id_actividad" value="{{ actividad.id }}">
+                            <input type="hidden" name="id" value="{{ comentario.id }}">
+                            <textarea name="comentario" id="comentario_modificado" required></textarea>
+                            <button type="submit" name="accion" value="modificar" class="btn btn-primary ">
+                                Modificar
+                            </button>
+                        </form>
+                    </div>
+                    
+                    
+                   
+
+                {% endif %}
+            </div>
+        {% endfor %}
+
+            {% if registrado %}
+                <!--FOrmulario para añadir comentario, con autor,correo electronico y comentario-->
+                <form action="comentarios.php" method="post">
+                    <input type="hidden" name="id_actividad" value="{{ actividad.id }}">
+                    <label for="autor">Autor</label>
+                    </br>
+                    <input type="text" name="autor" id="autor" required/>
+                    </br>
+                    <label for="correo">Correo</label>
+                    </br>
+                    <input type="email" name="correo" id="correo" required/>
+                    </br>
+                    <label for="comentario">Comentario</label>
+                    </br>
+                    <textarea name="comentario" id="comentario" required></textarea>
+                    </br>
+                    <button type="submit" name="accion" value="insertar" class="btn btn-primary">Añadir comentario</button> 
+
+                </form>
+
+            {% endif %}
+
+
+            
+
+
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="../js/coments.js"></script>
+
+    </div>
+
+    {% endblock %}
